@@ -1,3 +1,5 @@
+/* methods channing  */
+
 
 class User {
 
@@ -5,37 +7,36 @@ class User {
     constructor(name, email) {
         this.name = name;
         this.email = email;
+        this.score = 0;
     }
 
     login() {
         console.log(this.email, ' is just logged in ');
+        return this;
     }
 
     logout() {
-
         console.log(this.email, 'is just loggedout');
-
+        return this;
     }
 
+    updateScore() {
+        this.score++;
+        console.log(this.email, 'score is now ', this.score);
+        return this;
+    }
 }
 
-
-// the 'new' keyword
-// - create a new elsempty object {}
-// - sets the value of 'this' to be the new empty object
-// - calls the constructor method
-
+// Created instance
 
 var userOne = new User('yagya', 'yagya@mail.com');
 var userTwo = new User('Ananda', 'ananda@mail.com');
 
+// userOne.login();
+// userOne.logout();
+// userOne.updateScore();
 
-// console.log(userOne);
-// console.log(userTwo);
+
+userOne.login().updateScore().updateScore().logout();
 
 
-// console.log(userOne.login());
-// console.log(userTwo.logout());
-
-userOne.login();
-userTwo.logout();
